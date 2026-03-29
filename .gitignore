@@ -2,3 +2,4 @@ node_modules/
 _site/
 .DS_Store
 *.log
+\n# Environment / secrets — never commit\n.env\n*.env\n.hermes/

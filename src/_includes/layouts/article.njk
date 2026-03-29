@@ -1,0 +1,102 @@
+---
+layout: layouts/base.njk
+article: true
+---
+
+<!-- ══════════════════════════════════════════
+     ARTICLE HERO
+══════════════════════════════════════════════ -->
+<div class="article-hero">
+  <div class="container">
+    <div class="article-hero__inner">
+
+      <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="#">{{ category }}</a>
+        <span aria-hidden="true">›</span>
+        <span style="color:var(--text-dim)">{{ title }}</span>
+      </nav>
+
+      <div class="article-hero__tag">
+        <span class="tag {{ tag_class }}">{{ category }}</span>
+      </div>
+
+      <h1 class="article-hero__title">{{ title }}</h1>
+
+      <p class="article-hero__subtitle">{{ description }}</p>
+
+      <div class="article-hero__meta">
+        <div class="article-hero__author">
+          <div class="author-avatar">AP</div>
+          <div class="author-info">
+            <span class="author-name">Alan Peart</span>
+            <span class="author-role">Editor, Listen Vinyl</span>
+          </div>
+        </div>
+        <span class="article-meta-item"><span class="dot"></span> {{ date | dateDisplay }}</span>
+        <span class="article-meta-item"><span class="dot"></span> {{ read_time }}</span>
+        {% if ref %}<span class="article-meta-item"><span class="dot"></span> REF: {{ ref }}</span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     ARTICLE CONTENT
+══════════════════════════════════════════════ -->
+<div class="container">
+  <div class="article-layout">
+
+    <main class="article-body" id="article-body">
+      {{ content | safe }}
+
+      <div class="article-tags">
+        {% for t in tags %}
+        <span class="tag tag--muted">{{ t }}</span>
+        {% endfor %}
+      </div>
+    </main>
+
+    <aside class="article-sidebar" aria-label="Article sidebar">
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget__header">Contents</div>
+        <div class="sidebar-widget__body">
+          <ol class="toc-list">
+            <li><a href="#article-body"><span class="toc-num">01.</span> {{ toc_1 or "Introduction" }}</a></li>
+            <li><a href="#article-body"><span class="toc-num">02.</span> {{ toc_2 or "Background" }}</a></li>
+            <li><a href="#article-body"><span class="toc-num">03.</span> {{ toc_3 or "Details" }}</a></li>
+            <li><a href="#article-body"><span class="toc-num">04.</span> {{ toc_4 or "Recommendations" }}</a></li>
+            <li><a href="#article-body"><span class="toc-num">05.</span> {{ toc_5 or "The Verdict" }}</a></li>
+          </ol>
+        </div>
+      </div>
+
+      {% if album_title %}
+      <div class="sidebar-widget">
+        <div class="sidebar-album-art">
+          <div style="width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 50%,transparent 28%,#0c0c0c 28.5%,#1f1f1f 32%,#080808 32.5%,#1a1a1a 42%,#040404 42.5%,#141414 55%,#020202 55.5%,#0f0f0f 70%,#010101 70.5%,#0b0b0b 85%,#000 100%);box-shadow:0 0 40px rgba(0,0,0,0.8),0 0 20px rgba(212,168,67,0.08);position:relative">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:35%;height:35%;border-radius:50%;background:radial-gradient(circle,#8B1A1A,#500E0E)"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:#07090F"></div>
+          </div>
+        </div>
+        <div class="album-info">
+          <div class="album-info__title">{{ album_title }}</div>
+          <div class="album-info__artist">{{ album_artist }}</div>
+          <div class="album-info__meta">
+            <div class="album-info__row"><span>Label</span><span>{{ album_label }}</span></div>
+            <div class="album-info__row"><span>Format</span><span>LP, 33⅓ RPM</span></div>
+            {% if album_pressing %}<div class="album-info__row"><span>Best Press</span><span>{{ album_pressing }}</span></div>{% endif %}
+            {% if album_rating %}<div class="album-info__row"><span>Rating</span><span style="color:var(--amber);font-weight:600">{{ album_rating }}</span></div>{% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+    </aside>
+
+  </div>
+</div>

@@ -1,0 +1,329 @@
+/* ══════════════════════════════════════════
+   V2 OVERRIDES — MAXIMALIST ATOMIC AGE
+══════════════════════════════════════════ */
+
+/* ── CRT scan-line overlay on the whole page ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.07) 2px,
+    rgba(0,0,0,0.07) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Technical dividers ── */
+.tech-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  opacity: 0.5;
+}
+.tech-rule__line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--amber) 0px,
+    var(--amber) 6px,
+    transparent 6px,
+    transparent 10px
+  );
+}
+.tech-rule__tick {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--amber);
+  letter-spacing: 0.15em;
+}
+
+/* ── Section labels redesigned as instrument readouts ── */
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  color: var(--teal);
+  text-transform: uppercase;
+  border: 1px solid rgba(0,200,175,0.3);
+  padding: 0.2rem 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.section-eyebrow::before {
+  content: '▶';
+  font-size: 0.45rem;
+  color: var(--amber);
+}
+.section-eyebrow::after {
+  content: '//';
+  color: rgba(212,168,67,0.4);
+  font-size: 0.55rem;
+}
+
+/* ── Mission-patch emblem ── */
+.mission-patch {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 900px) { .mission-patch { display: none; } }
+
+/* ── Hero overrides ── */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atomic starburst in hero background */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg, transparent 10deg,
+    rgba(212,168,67,0.015) 10deg, rgba(212,168,67,0.015) 12deg,
+    transparent 12deg, transparent 22deg,
+    rgba(212,168,67,0.015) 22deg, rgba(212,168,67,0.015) 24deg,
+    transparent 24deg, transparent 34deg,
+    rgba(212,168,67,0.015) 34deg, rgba(212,168,67,0.015) 36deg,
+    transparent 36deg, transparent 46deg,
+    rgba(212,168,67,0.015) 46deg, rgba(212,168,67,0.015) 48deg,
+    transparent 48deg
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: var(--teal);
+  text-transform: uppercase;
+  border: 1px solid rgba(0,200,175,0.35);
+  padding: 0.25rem 0.75rem;
+  display: inline-block;
+  position: relative;
+}
+.hero-eyebrow-text::before {
+  content: 'TRANSMISSION //';
+  position: absolute;
+  top: -0.65rem;
+  left: 0.5rem;
+  font-size: 0.45rem;
+  color: var(--amber);
+  opacity: 0.7;
+  letter-spacing: 0.2em;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  position: relative;
+}
+
+/* Glitch effect on hover — just a shimmer */
+.hero-title em {
+  font-style: normal;
+  color: var(--amber);
+  text-shadow: 0 0 30px rgba(212,168,67,0.4), 0 0 60px rgba(212,168,67,0.15);
+}
+
+/* Coordinate flavour text below hero subtitle */
+.hero-coords {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: rgba(212,168,67,0.4);
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+}
+
+/* ── Amber inverse section ── */
+.amber-section {
+  background: var(--amber);
+  color: #07090F;
+  padding: 3.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.amber-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(0,0,0,0.04) 20px,
+    rgba(0,0,0,0.04) 21px
+  );
+  pointer-events: none;
+}
+.amber-section .section-eyebrow {
+  color: #07090F;
+  border-color: rgba(0,0,0,0.3);
+}
+.amber-section .section-eyebrow::before { color: #07090F; }
+.amber-section .section-eyebrow::after { color: rgba(0,0,0,0.35); }
+.amber-section .section-title { color: #07090F; }
+.amber-section .card {
+  background: #FAECC0;
+  border-color: rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.amber-section .card__art {
+  background: #1A1008 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  flex-shrink: 0;
+  min-height: 160px;
+  aspect-ratio: 16/10;
+}
+.amber-section .card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.amber-section .card__title { color: #07090F; }
+.amber-section .card__excerpt { color: rgba(0,0,0,0.7); }
+.amber-section .card__footer,
+.amber-section .card__footer span { color: rgba(0,0,0,0.45); border-color: rgba(0,0,0,0.15); font-family: var(--font-mono); }
+.amber-section .card__read-more { color: #07090F !important; }
+.amber-section .card__read-more:hover { color: rgba(0,0,0,0.6) !important; }
+.amber-section .tag { background: rgba(0,0,0,0.12); color: #07090F !important; border: 1px solid rgba(0,0,0,0.2); }
+.amber-section .section-link { color: rgba(0,0,0,0.55); }
+.amber-section .card:hover { border-color: rgba(0,0,0,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+/* ── Starburst decorative element ── */
+.starburst {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* ── Reticle / crosshair decoration ── */
+.reticle-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.reticle-corner::before, .reticle-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--amber);
+  opacity: 0.5;
+}
+.reticle-corner::before { width: 100%; height: 1px; top: 0; left: 0; }
+.reticle-corner::after { width: 1px; height: 100%; top: 0; left: 0; }
+.reticle-corner.tr { top: 0.75rem; right: 0.75rem; transform: scaleX(-1); }
+.reticle-corner.tl { top: 0.75rem; left: 0.75rem; }
+.reticle-corner.br { bottom: 0.75rem; right: 0.75rem; transform: scale(-1); }
+.reticle-corner.bl { bottom: 0.75rem; left: 0.75rem; transform: scaleY(-1); }
+
+/* ── Card art orbit decoration ── */
+.orbit-deco {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: orbit-rotate 20s linear infinite;
+}
+@keyframes orbit-rotate {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+/* ── Hero vinyl: make it glow in v2 ── */
+.hero-vinyl__disc {
+  box-shadow:
+    0 0 60px rgba(212,168,67,0.15),
+    0 0 120px rgba(212,168,67,0.08),
+    0 0 200px rgba(0,200,175,0.05);
+}
+
+/* ── Section title with double underline ── */
+.section-title-v2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.section-title-v2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--teal) 60%, transparent);
+}
+.amber-section .section-title-v2 { color: #07090F; }
+.amber-section .section-title-v2::after {
+  background: linear-gradient(90deg, #07090F, rgba(0,0,0,0.2) 60%, transparent);
+}
+
+/* ── Discovery horizontal cards — force correct layout ── */
+.discovery-grid .card--horizontal {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch;
+}
+.discovery-grid .card--horizontal .card__art {
+  width: 120px !important;
+  min-width: 120px !important;
+  flex-shrink: 0 !important;
+  aspect-ratio: auto !important;
+  min-height: 130px !important;
+}
+.discovery-grid .card--horizontal .card__body {
+  flex: 1 !important;
+  min-width: 0;
+}
+
+/* ── Ticker v2: amber on dark ── */
+.ticker-v2 {
+  background: var(--amber);
+  border-top: none;
+  border-bottom: none;
+}
+.ticker-v2 .ticker-track { color: #07090F; }
+.ticker-v2 .dot { background: #07090F; }
+
+/* ── Footer flavour text ── */
+.footer-freq {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-faint);
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,468 @@
+---
+layout: layouts/base.njk
+---
+
+<!-- ══════════════════════════════════════════
+     HERO — MAXIMALIST V2
+══════════════════════════════════════════════ -->
+<section class="hero" style="min-height:90vh">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <!-- Orbit rings behind disc -->
+  <div aria-hidden="true" style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);pointer-events:none">
+    <div style="position:relative;width:min(700px,75vw);height:min(700px,75vw)">
+      <div style="position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(212,168,67,0.12)"></div>
+      <div style="position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(0,200,175,0.08)"></div>
+      <div style="position:absolute;inset:16%;border-radius:50%;border:1px dashed rgba(212,168,67,0.06)"></div>
+      <div style="position:absolute;top:4%;left:50%;transform:translateX(-50%);width:8px;height:8px;background:var(--amber);border-radius:50%;box-shadow:0 0 10px var(--amber);opacity:0.7"></div>
+      <div style="position:absolute;bottom:8%;right:10%;width:5px;height:5px;background:var(--teal);border-radius:50%;box-shadow:0 0 8px var(--teal);opacity:0.6"></div>
+      <div style="position:absolute;top:20%;left:5%;width:4px;height:4px;background:var(--amber);border-radius:50%;opacity:0.4"></div>
+    </div>
+  </div>
+
+  <!-- The disc -->
+  <div class="hero-vinyl" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;position:absolute;right:-100px;top:50%;transform:translateY(-50%)">
+    <div class="hero-vinyl__disc" style="position:relative;flex-shrink:0">
+      <div class="hero-vinyl__label">
+        <span class="hero-vinyl__label-text">Columbia<br>Stereo</span>
+      </div>
+      <div class="hero-vinyl__hole"></div>
+      <div class="hero-vinyl__sheen"></div>
+    </div>
+  </div>
+
+  <!-- Mission patch emblem -->
+  <div class="mission-patch" aria-hidden="true">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+      <circle cx="60" cy="60" r="55" stroke="#D4A843" stroke-width="2" opacity="0.6"/>
+      <circle cx="60" cy="60" r="48" stroke="#D4A843" stroke-width="0.5" opacity="0.3" stroke-dasharray="3 4"/>
+      <circle cx="60" cy="60" r="47" fill="rgba(10,14,26,0.8)"/>
+      <ellipse cx="60" cy="60" rx="32" ry="15" stroke="#00C8AF" stroke-width="1" opacity="0.6" transform="rotate(-30 60 60)"/>
+      <circle cx="60" cy="60" r="18" fill="#0A0E1A" stroke="#D4A843" stroke-width="1" opacity="0.8"/>
+      <circle cx="60" cy="60" r="12" fill="none" stroke="#1a2030" stroke-width="1"/>
+      <circle cx="60" cy="60" r="8" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="5" fill="#1a2d1a" stroke="#D4A843" stroke-width="0.5" opacity="0.7"/>
+      <circle cx="60" cy="60" r="2" fill="#D4A843" opacity="0.8"/>
+      <circle cx="30" cy="30" r="1.5" fill="#D4A843" opacity="0.7"/>
+      <circle cx="90" cy="30" r="1" fill="#D4A843" opacity="0.5"/>
+      <circle cx="25" cy="75" r="1" fill="#00C8AF" opacity="0.6"/>
+      <circle cx="95" cy="70" r="1.5" fill="#D4A843" opacity="0.4"/>
+      <circle cx="60" cy="15" r="2" fill="#00C8AF" opacity="0.6"/>
+      <circle cx="82" cy="43" r="3" fill="#D4A843" opacity="0.9"/>
+      <path id="top-arc" d="M 15 60 A 45 45 0 0 1 105 60" fill="none"/>
+      <text font-family="Orbitron, monospace" font-size="7" fill="#D4A843" opacity="0.8" letter-spacing="3">
+        <textPath href="#top-arc" startOffset="10%">LISTEN VINYL DISPATCH</textPath>
+      </text>
+      <path id="bot-arc" d="M 15 62 A 45 45 0 0 0 105 62" fill="none"/>
+      <text font-family="Orbitron, monospace" font-size="6" fill="#00C8AF" opacity="0.7" letter-spacing="2">
+        <textPath href="#bot-arc" startOffset="12%">EST. MMXXVI · 33⅓ RPM</textPath>
+      </text>
+      <g opacity="0.5" fill="#D4A843">
+        <polygon points="18,60 19,58 20,60 19,62" transform="scale(0.8) translate(4,15)"/>
+        <polygon points="100,60 101,58 102,60 101,62" transform="scale(0.8) translate(-18,15)"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container" style="position:relative;z-index:1">
+    <div class="hero-content">
+
+      <div class="hero-eyebrow" style="margin-bottom:1.5rem">
+        <span class="hero-eyebrow-text">The Vinyl Enthusiast's Publication</span>
+      </div>
+
+      <div class="tech-rule" style="max-width:480px;margin-bottom:1.25rem">
+        <span class="tech-rule__line"></span>
+        <span class="tech-rule__tick">SIGNAL ACQUIRED</span>
+        <span class="tech-rule__line" style="max-width:40px"></span>
+      </div>
+
+      <h1 class="hero-title">
+        Music sounds<br>better on <em>vinyl</em>.
+      </h1>
+
+      <div class="tech-rule" style="max-width:480px;margin:1.25rem 0">
+        <span class="tech-rule__line" style="max-width:40px"></span>
+        <span class="tech-rule__tick">◆</span>
+        <span class="tech-rule__line"></span>
+      </div>
+
+      <p class="hero-subtitle">
+        Listening guides, gear reviews, discovery features, and record store spotlights —
+        written for people who believe a record is worth sitting down with.
+      </p>
+
+      <p class="hero-coords">
+        FREQ: 33.33 RPM &nbsp;·&nbsp; SIGNAL: ANALOGUE &nbsp;·&nbsp; BANDWIDTH: FULL RANGE
+      </p>
+
+      <div class="hero-actions" style="margin-top:2rem">
+        <a href="#featured" class="btn btn--primary">Start Reading</a>
+        <a href="/about/" class="btn btn--outline">About the Publication</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TICKER — amber version -->
+<div class="ticker ticker-v2" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot"></span> KIND OF BLUE — MILES DAVIS</span>
+    <span class="ticker-item"><span class="dot"></span> TURNTABLE SETUP GUIDES</span>
+    <span class="ticker-item"><span class="dot"></span> BEST JAZZ PRESSINGS</span>
+    <span class="ticker-item"><span class="dot"></span> RADIOHEAD ON VINYL</span>
+    <span class="ticker-item"><span class="dot"></span> ORTOFON CARTRIDGE REVIEWS</span>
+    <span class="ticker-item"><span class="dot"></span> RECORD STORE DISCOVERIES</span>
+    <span class="ticker-item"><span class="dot"></span> CLEANING &amp; CARE</span>
+    <span class="ticker-item"><span class="dot"></span> BLUE NOTE FIRST PRESSINGS</span>
+    <span class="ticker-item"><span class="dot"></span> BUDGET HI-FI PICKS</span>
+    <span class="ticker-item"><span class="dot"></span> NEW RELEASES ON WAX</span>
+    <span class="ticker-item"><span class="dot"></span> KIND OF BLUE — MILES DAVIS</span>
+    <span class="ticker-item"><span class="dot"></span> TURNTABLE SETUP GUIDES</span>
+    <span class="ticker-item"><span class="dot"></span> BEST JAZZ PRESSINGS</span>
+    <span class="ticker-item"><span class="dot"></span> RADIOHEAD ON VINYL</span>
+    <span class="ticker-item"><span class="dot"></span> ORTOFON CARTRIDGE REVIEWS</span>
+    <span class="ticker-item"><span class="dot"></span> RECORD STORE DISCOVERIES</span>
+    <span class="ticker-item"><span class="dot"></span> CLEANING &amp; CARE</span>
+    <span class="ticker-item"><span class="dot"></span> BLUE NOTE FIRST PRESSINGS</span>
+    <span class="ticker-item"><span class="dot"></span> BUDGET HI-FI PICKS</span>
+    <span class="ticker-item"><span class="dot"></span> NEW RELEASES ON WAX</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     FEATURED ARTICLE
+══════════════════════════════════════════════ -->
+<section class="section" id="featured">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-title-group">
+        <span class="section-eyebrow">Featured</span>
+        <h2 class="section-title-v2" style="margin-top:0.4rem">Mission Log: Start Here</h2>
+      </div>
+    </div>
+
+    <div class="tech-rule" style="margin-bottom:2rem">
+      <span class="tech-rule__line"></span>
+      <span class="tech-rule__tick">FIELD REPORT 001</span>
+      <span class="tech-rule__line" style="max-width:60px"></span>
+    </div>
+
+    {% for post in collections.featuredPosts | reverse %}
+    {% if loop.first %}
+    <a href="{{ post.url }}" class="card-featured" style="text-decoration:none;position:relative">
+      <div class="reticle-corner tl" style="position:absolute;z-index:2"></div>
+      <div class="reticle-corner tr" style="position:absolute;z-index:2"></div>
+      <div class="reticle-corner bl" style="position:absolute;z-index:2"></div>
+      <div class="reticle-corner br" style="position:absolute;z-index:2"></div>
+
+      <div class="card-featured__art art--blue-note" aria-hidden="true">
+        <div class="vinyl-art" style="width:260px;height:260px;transform:rotate(-12deg)">
+          <div class="vinyl-art__disc" style="width:100%;height:100%;position:relative">
+            <div class="vinyl-art__label" style="background:radial-gradient(circle,#1a3a6e,#0a1e40);width:35%;height:35%;border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;">
+              <div class="vinyl-art__hole"></div>
+            </div>
+          </div>
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;border-radius:50%;border:1px dashed rgba(212,168,67,0.2);pointer-events:none"></div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;border-radius:50%;border:1px solid rgba(0,200,175,0.15);pointer-events:none"></div>
+        <div style="position:absolute;top:15%;right:15%;width:8px;height:8px;background:var(--amber);border-radius:50%;box-shadow:0 0 12px var(--amber);opacity:0.8"></div>
+        <div style="position:absolute;bottom:20%;left:18%;width:5px;height:5px;background:var(--teal);border-radius:50%;box-shadow:0 0 8px var(--teal);opacity:0.7"></div>
+        <div style="position:absolute;bottom:1.5rem;left:1.5rem;text-align:left">
+          <div style="font-family:var(--font-display);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);opacity:0.8;margin-bottom:0.25rem">Blue Note · 1959</div>
+          <div style="font-family:var(--font-display);font-size:0.75rem;font-weight:600;color:var(--amber);letter-spacing:0.08em">Kind of Blue</div>
+        </div>
+      </div>
+
+      <div class="card-featured__body">
+        <div class="card__meta">
+          <span class="tag {{ post.data.tag_class }}">{{ post.data.category }}</span>
+          <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-faint);letter-spacing:0.15em">REF: {{ post.data.ref }}</span>
+        </div>
+        <h2 class="card__title" style="font-size:clamp(1.1rem,2.5vw,1.5rem);margin-bottom:0.85rem">
+          {{ post.data.title }}
+        </h2>
+        <p class="card__excerpt" style="font-size:0.95rem;margin-bottom:1.5rem">
+          {{ post.data.description }}
+        </p>
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1rem;border-top:1px solid var(--card-border)">
+          <span class="card__read-more">Read Full Guide</span>
+          <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-faint)">{{ post.data.read_time }}</span>
+          <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-faint)">{{ post.date | dateDisplay }}</span>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     LATEST ARTICLES — AMBER INVERSE SECTION
+══════════════════════════════════════════════ -->
+<section class="amber-section">
+  <div class="container">
+
+    <div class="section-header" style="margin-bottom:0.5rem">
+      <div class="section-title-group">
+        <span class="section-eyebrow">Latest</span>
+        <h2 class="section-title-v2" style="margin-top:0.4rem;color:#07090F">Signal Acquisition //</h2>
+      </div>
+      <a href="#" class="section-link" style="color:rgba(0,0,0,0.5)">View All</a>
+    </div>
+
+    <div class="tech-rule" style="margin-bottom:2rem;opacity:0.25">
+      <span class="tech-rule__line" style="background:repeating-linear-gradient(90deg,#07090F 0px,#07090F 6px,transparent 6px,transparent 10px)"></span>
+      <span class="tech-rule__tick" style="color:#07090F">RECENT GUIDES &amp; REVIEWS</span>
+      <span class="tech-rule__line" style="max-width:80px;background:repeating-linear-gradient(90deg,#07090F 0px,#07090F 6px,transparent 6px,transparent 10px)"></span>
+    </div>
+
+    <div class="cards-grid">
+
+      <article class="card">
+        <div class="card__art art--gear" style="position:relative">
+          <div class="gear-art">
+            <div class="gear-art__platter"></div>
+            <div class="gear-art__arm"></div>
+          </div>
+          <div style="position:absolute;top:0.5rem;right:0.5rem;font-family:var(--font-mono);font-size:0.5rem;color:rgba(212,168,67,0.5);letter-spacing:0.1em">REF: LV-002</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--teal">Gear</span></div>
+          <h2 class="card__title">Best Turntables Under £200 in 2026: Our No-Nonsense Picks</h2>
+          <p class="card__excerpt">You don't need to spend a fortune to play vinyl properly. We tested seven turntables under £200 — here are the three worth buying, and the ones to avoid.</p>
+          <div class="card__footer">
+            <span>9 min read</span>
+            <a href="/posts/best-turntables-under-200/" class="card__read-more">Read</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__art art--discovery" style="background:linear-gradient(135deg,#080D14 0%,#0E1420 40%,#060A0F 100%);position:relative">
+          <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.7">
+            <ellipse cx="50" cy="40" rx="40" ry="20" stroke="#D4A843" stroke-width="0.5"/>
+            <ellipse cx="50" cy="40" rx="28" ry="14" stroke="#00C8AF" stroke-width="0.5"/>
+            <circle cx="50" cy="40" r="6" fill="#1a1a2e" stroke="#D4A843" stroke-width="0.5"/>
+            <circle cx="88" cy="39" r="3" fill="#D4A843" opacity="0.8"/>
+            <circle cx="13" cy="42" r="2" fill="#00C8AF" opacity="0.6"/>
+            <circle cx="50" cy="21" r="2" fill="#D4A843" opacity="0.4"/>
+          </svg>
+          <div style="position:absolute;top:0.5rem;right:0.5rem;font-family:var(--font-mono);font-size:0.5rem;color:rgba(212,168,67,0.5);letter-spacing:0.1em">REF: LV-003</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--muted">Discovery</span></div>
+          <h2 class="card__title">If You Love Radiohead, Listen to These 7 Records</h2>
+          <p class="card__excerpt">From Talk Talk's final album to Scott Walker's late-career experiments — seven records that share Radiohead's particular genius for unease, beauty, and the uncanny.</p>
+          <div class="card__footer">
+            <span>8 min read</span>
+            <a href="/posts/if-you-love-radiohead/" class="card__read-more">Read</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__art art--jazz" style="position:relative">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.7">
+            <circle cx="45" cy="45" r="36" stroke="#D4A843" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="45" cy="45" r="24" stroke="#00C8AF" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="45" cy="45" r="12" fill="#1a0f08" stroke="#D4A843" stroke-width="1" opacity="0.8"/>
+            <path d="M 40 38 L 40 52 M 40 52 Q 38 54 36 52 Q 34 50 36 48 Q 38 46 40 48" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M 40 38 L 50 35" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M 50 35 L 50 44 Q 48 46 46 44 Q 44 42 46 40 Q 48 38 50 40" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div style="position:absolute;top:0.5rem;right:0.5rem;font-family:var(--font-mono);font-size:0.5rem;color:rgba(212,168,67,0.5);letter-spacing:0.1em">REF: LV-004</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--amber">Best Albums</span></div>
+          <h2 class="card__title">The Best Jazz Albums on Vinyl: A Definitive Guide for New Collectors</h2>
+          <p class="card__excerpt">Not sure where to start with jazz on vinyl? We've mapped the essential records — from Kind of Blue to the avant-garde — with pressing recommendations for every budget.</p>
+          <div class="card__footer">
+            <span>15 min read</span>
+            <a href="/posts/best-jazz-albums-vinyl/" class="card__read-more">Read</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     ABOUT STRIP
+══════════════════════════════════════════════ -->
+<section class="about-strip" style="position:relative;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);opacity:0.04;pointer-events:none">
+    <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+      <g stroke="#D4A843" stroke-width="1">
+        <line x1="200" y1="0" x2="200" y2="400"/>
+        <line x1="0" y1="200" x2="400" y2="200"/>
+        <line x1="58" y1="58" x2="342" y2="342"/>
+        <line x1="342" y1="58" x2="58" y2="342"/>
+        <line x1="200" y1="0" x2="200" y2="400" transform="rotate(22.5 200 200)"/>
+        <line x1="200" y1="0" x2="200" y2="400" transform="rotate(45 200 200)"/>
+        <line x1="200" y1="0" x2="200" y2="400" transform="rotate(67.5 200 200)"/>
+        <line x1="200" y1="0" x2="200" y2="400" transform="rotate(112.5 200 200)"/>
+        <line x1="200" y1="0" x2="200" y2="400" transform="rotate(135 200 200)"/>
+        <line x1="200" y1="0" x2="200" y2="400" transform="rotate(157.5 200 200)"/>
+      </g>
+      <circle cx="200" cy="200" r="180" stroke="#D4A843" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="120" stroke="#D4A843" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="60" stroke="#D4A843" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container" style="position:relative;z-index:1">
+    <div class="about-strip__inner">
+      <div>
+        <div class="tech-rule" style="margin-bottom:1rem;max-width:300px">
+          <span class="tech-rule__line" style="max-width:20px"></span>
+          <span class="tech-rule__tick">ABOUT THE PUBLICATION //</span>
+          <span class="tech-rule__line"></span>
+        </div>
+        <h2 class="about-strip__heading">
+          Written by listeners.<br>For <em>listeners</em>.
+        </h2>
+        <p class="about-strip__text">
+          Listen Vinyl is an independent publication built around one belief:
+          the act of listening to a record — selecting it, handling it, setting the needle down —
+          is worth doing properly. We write guides, reviews, and discovery features
+          for people who want to hear music, not just have it on in the background.
+        </p>
+        <p class="about-strip__text">
+          No affiliate filler, no "top 10" padding. Curated by obsessives
+          who believe every record deserves to be heard properly.
+        </p>
+        <a href="/about/" class="btn btn--outline" style="margin-top:0.5rem">About the Publication →</a>
+      </div>
+      <div>
+        <div class="about-strip__stats">
+          <div class="stat"><span class="stat__value">120+</span><span class="stat__label">Listening Guides</span></div>
+          <div class="stat"><span class="stat__value">48</span><span class="stat__label">Gear Reviews</span></div>
+          <div class="stat"><span class="stat__value">30+</span><span class="stat__label">Store Guides</span></div>
+          <div class="stat"><span class="stat__value">7k</span><span class="stat__label">Readers</span></div>
+          <div class="stat"><span class="stat__value">∞</span><span class="stat__label">Revolutions</span></div>
+          <div class="stat"><span class="stat__value">33⅓</span><span class="stat__label">RPM</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DISCOVERY — dark section
+══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-title-group">
+        <span class="section-eyebrow">Discover</span>
+        <h2 class="section-title-v2" style="margin-top:0.4rem">Field Reports //</h2>
+      </div>
+      <a href="#" class="section-link">All Discovery</a>
+    </div>
+
+    <div class="tech-rule" style="margin-bottom:2rem">
+      <span class="tech-rule__line"></span>
+      <span class="tech-rule__tick">WORTH YOUR EARS</span>
+      <span class="tech-rule__line" style="max-width:80px"></span>
+    </div>
+
+    <div class="discovery-grid">
+      <article class="card card--horizontal">
+        <div class="card__art art--discovery" style="aspect-ratio:auto;min-height:130px;background:linear-gradient(135deg,#080A14,#10142A);position:relative">
+          <div class="card__number">1</div>
+          <div style="position:absolute;bottom:0.4rem;right:0.4rem;font-family:var(--font-mono);font-size:0.45rem;color:var(--amber);opacity:0.4;letter-spacing:0.1em">LV-D01</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--teal">Discovery</span></div>
+          <h3 class="card__title" style="font-size:0.85rem">Talk Talk — Spirit of Eden</h3>
+          <p class="card__excerpt" style="font-size:0.78rem;margin-bottom:0.5rem">The record that proved pop could dissolve into something genuinely alive.</p>
+        </div>
+      </article>
+
+      <article class="card card--horizontal">
+        <div class="card__art art--jazz" style="aspect-ratio:auto;min-height:130px;background:linear-gradient(135deg,#140810,#1E0F18);position:relative">
+          <div class="card__number">2</div>
+          <div style="position:absolute;bottom:0.4rem;right:0.4rem;font-family:var(--font-mono);font-size:0.45rem;color:var(--amber);opacity:0.4;letter-spacing:0.1em">LV-D02</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--amber">Jazz</span></div>
+          <h3 class="card__title" style="font-size:0.85rem">John Coltrane — A Love Supreme</h3>
+          <p class="card__excerpt" style="font-size:0.78rem;margin-bottom:0.5rem">The spiritual centrepiece of Coltrane's catalogue. The Impulse! original sounds like nothing else.</p>
+        </div>
+      </article>
+
+      <article class="card card--horizontal">
+        <div class="card__art art--gear" style="aspect-ratio:auto;min-height:130px;background:linear-gradient(135deg,#0C100A,#161C0E);position:relative">
+          <div class="card__number">3</div>
+          <div style="position:absolute;bottom:0.4rem;right:0.4rem;font-family:var(--font-mono);font-size:0.45rem;color:var(--amber);opacity:0.4;letter-spacing:0.1em">LV-D03</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--muted">Classical</span></div>
+          <h3 class="card__title" style="font-size:0.85rem">Arvo Pärt — Tabula Rasa</h3>
+          <p class="card__excerpt" style="font-size:0.78rem;margin-bottom:0.5rem">Tintinnabuli on vinyl is a revelation — the ECM pressing is acoustic perfection.</p>
+        </div>
+      </article>
+
+      <article class="card card--horizontal">
+        <div class="card__art art--blue-note" style="aspect-ratio:auto;min-height:130px;position:relative">
+          <div class="card__number">4</div>
+          <div style="position:absolute;bottom:0.4rem;right:0.4rem;font-family:var(--font-mono);font-size:0.45rem;color:var(--amber);opacity:0.4;letter-spacing:0.1em">LV-D04</div>
+        </div>
+        <div class="card__body">
+          <div class="card__meta"><span class="tag tag--amber">Soul</span></div>
+          <h3 class="card__title" style="font-size:0.85rem">Marvin Gaye — What's Going On</h3>
+          <p class="card__excerpt" style="font-size:0.78rem;margin-bottom:0.5rem">Proof that political albums can be elegant. The Tamla original has a warmth reissues still chase.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     NEWSLETTER
+══════════════════════════════════════════════ -->
+<section class="newsletter" style="position:relative">
+  <div class="container" style="display:flex;justify-content:center;position:relative;z-index:1">
+    <div class="newsletter__inner" style="position:relative">
+      <div class="reticle-corner tl" style="position:absolute;z-index:2"></div>
+      <div class="reticle-corner tr" style="position:absolute;z-index:2"></div>
+      <div class="reticle-corner bl" style="position:absolute;z-index:2"></div>
+      <div class="reticle-corner br" style="position:absolute;z-index:2"></div>
+
+      <div class="tech-rule" style="margin-bottom:0.75rem">
+        <span class="tech-rule__line"></span>
+        <span class="tech-rule__tick">OPEN CHANNEL //</span>
+        <span class="tech-rule__line"></span>
+      </div>
+
+      <p class="newsletter__eyebrow">New guides, weekly</p>
+      <h2 class="newsletter__title">The Listen Vinyl Dispatch</h2>
+      <p class="newsletter__text">
+        A weekly transmission: one listening recommendation, one piece of useful gear advice,
+        one record store worth knowing. No noise.
+      </p>
+      <form class="newsletter__form" onsubmit="return false">
+        <input class="newsletter__input" type="email" placeholder="your@email.com" autocomplete="email">
+        <button class="btn btn--primary" type="submit">Subscribe</button>
+      </form>
+
+      <div class="tech-rule" style="margin-top:1.5rem">
+        <span class="tech-rule__line"></span>
+        <span class="tech-rule__tick">END TRANSMISSION</span>
+        <span class="tech-rule__line"></span>
+      </div>
+    </div>
+  </div>
+</section>

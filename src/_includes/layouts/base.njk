@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description or site.description }}">
+  <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} — The Vinyl Enthusiast's Publication{% endif %}</title>
+  <link rel="stylesheet" href="/css/style.css">
+  {% if article %}<link rel="stylesheet" href="/css/article.css">{% endif %}
+  <link rel="stylesheet" href="/css/v2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% if article %}<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="Reading progress"></div>{% endif %}
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="18" cy="18" r="16" fill="#0A0E1A" stroke="#1C2A40" stroke-width="1"/>
+          <circle cx="18" cy="18" r="13" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+          <circle cx="18" cy="18" r="10" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+          <circle cx="18" cy="18" r="7" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+          <circle cx="18" cy="18" r="5" fill="#1a2d1a"/>
+          <path d="M 8 18 A 10 10 0 0 1 28 18" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path d="M 9 20 A 10 10 0 0 0 27 20" stroke="#00C8AF" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="18" cy="18" r="1.5" fill="#07090F"/>
+          <circle cx="18" cy="18" r="0.5" fill="#D4A843"/>
+        </svg>
+        <span class="logo-text">
+          <span class="listen">Listen</span>
+          <span class="vinyl">Vinyl</span>
+        </span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+        <a href="#">Listening Guides</a>
+        <a href="#">Gear</a>
+        <a href="#">Discovery</a>
+        <a href="#">Record Stores</a>
+        <a href="/about/" class="nav-cta">About</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:32px;height:32px">
+            <circle cx="18" cy="18" r="16" fill="#0A0E1A" stroke="#1C2A40" stroke-width="1"/>
+            <circle cx="18" cy="18" r="13" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+            <circle cx="18" cy="18" r="5" fill="#1a2d1a"/>
+            <path d="M 8 18 A 10 10 0 0 1 28 18" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+            <circle cx="18" cy="18" r="1.5" fill="#07090F"/>
+          </svg>
+          <span class="logo-text"><span class="listen">Listen</span><span class="vinyl">Vinyl</span></span>
+        </a>
+        <p>A quality publication for vinyl record enthusiasts. Independent, honest, curated by listeners.</p>
+        <p class="footer-freq">BROADCAST FREQ: 33.33 RPM · EST. MMXXVI · SIGNAL: ANALOGUE</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer: Content">
+        <h4>Content</h4>
+        <ul>
+          <li><a href="#">Listening Guides</a></li>
+          <li><a href="#">Gear Reviews</a></li>
+          <li><a href="#">Discovery</a></li>
+          <li><a href="#">Record Stores</a></li>
+          <li><a href="#">Best Albums</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Footer: Reference">
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="#">Cleaning Guide</a></li>
+          <li><a href="#">Pressing Glossary</a></li>
+          <li><a href="#">Setup Basics</a></li>
+          <li><a href="#">Cartridge Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Footer: Site">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {{ site.year }} {{ site.name }}. All rights reserved.</p>
+      <p class="footer-freq" style="margin-top:0.25rem">COORDINATES: 51.5074° N, 0.1278° W · TRANSMISSION ENDS</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.textContent = isOpen ? '✕' : '☰';
+    });
+  }
+
+  const header = document.querySelector('.site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  const observeCards = () => {
+    const cards = document.querySelectorAll('.card, .card-featured, .stat');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeCards);
+  } else {
+    observeCards();
+  }
+
+  // Reading progress bar
+  const progressBar = document.getElementById('reading-progress');
+  if (progressBar) {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+      progressBar.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+</script>
+
+</body>
+</html>

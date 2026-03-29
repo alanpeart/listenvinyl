@@ -11,6 +11,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% if article %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} — The Vinyl Enthusiast's Publication{% endif %}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:image" content="{{ og_image or (site.url + '/img/og-default.svg') }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} — The Vinyl Enthusiast's Publication{% endif %}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
+  <meta name="twitter:image" content="{{ og_image or (site.url + '/img/og-default.svg') }}">
+
+  <style>
+    /* Dimmed coming-soon nav items */
+    .nav-coming-soon {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+      position: relative;
+    }
+    /* Re-enable pointer events just for the tooltip on desktop */
+    @media (hover: hover) {
+      .nav-coming-soon {
+        pointer-events: auto;
+      }
+      .nav-coming-soon:hover {
+        opacity: 0.4;
+        color: inherit;
+        text-decoration: none;
+      }
+      .nav-coming-soon::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1C2A40;
+        color: #D4A843;
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 100;
+      }
+      .nav-coming-soon:hover::after {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -38,10 +94,10 @@
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-        <a href="#">Listening Guides</a>
-        <a href="#">Gear</a>
-        <a href="#">Discovery</a>
-        <a href="#">Record Stores</a>
+        <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Listening Guides</span>
+        <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Gear</span>
+        <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Discovery</span>
+        <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Record Stores</span>
         <a href="/about/" class="nav-cta">About</a>
       </nav>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -72,22 +128,22 @@
       <nav class="footer-nav" aria-label="Footer: Content">
         <h4>Content</h4>
         <ul>
-          <li><a href="#">Listening Guides</a></li>
-          <li><a href="#">Gear Reviews</a></li>
-          <li><a href="#">Discovery</a></li>
-          <li><a href="#">Record Stores</a></li>
-          <li><a href="#">Best Albums</a></li>
+          <li><span class="footer-coming-soon">Listening Guides</span></li>
+          <li><span class="footer-coming-soon">Gear Reviews</span></li>
+          <li><span class="footer-coming-soon">Discovery</span></li>
+          <li><span class="footer-coming-soon">Record Stores</span></li>
+          <li><span class="footer-coming-soon">Best Albums</span></li>
         </ul>
       </nav>
 
       <nav class="footer-nav" aria-label="Footer: Reference">
         <h4>Reference</h4>
         <ul>
-          <li><a href="#">Cleaning Guide</a></li>
-          <li><a href="#">Pressing Glossary</a></li>
-          <li><a href="#">Setup Basics</a></li>
-          <li><a href="#">Cartridge Guide</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><span class="footer-coming-soon">Cleaning Guide</span></li>
+          <li><span class="footer-coming-soon">Pressing Glossary</span></li>
+          <li><span class="footer-coming-soon">Setup Basics</span></li>
+          <li><span class="footer-coming-soon">Cartridge Guide</span></li>
+          <li><span class="footer-coming-soon">FAQ</span></li>
         </ul>
       </nav>
 
@@ -95,9 +151,9 @@
         <h4>Site</h4>
         <ul>
           <li><a href="/about/">About</a></li>
-          <li><a href="#">Newsletter</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Privacy</a></li>
+          <li><span class="footer-coming-soon">Newsletter</span></li>
+          <li><span class="footer-coming-soon">Contact</span></li>
+          <li><span class="footer-coming-soon">Privacy</span></li>
         </ul>
       </nav>
     </div>

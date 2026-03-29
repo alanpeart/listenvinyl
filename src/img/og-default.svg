@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Dark background -->
+  <rect width="1200" height="630" fill="#07090F"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#1C2A40" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#1C2A40" stroke-width="1"/>
+
+  <!-- Vinyl record illustration - centered right -->
+  <g transform="translate(900, 315)">
+    <circle r="200" fill="#0D1117" stroke="#1C2A40" stroke-width="2"/>
+    <circle r="175" fill="none" stroke="#161E2C" stroke-width="1"/>
+    <circle r="150" fill="none" stroke="#161E2C" stroke-width="1"/>
+    <circle r="125" fill="none" stroke="#161E2C" stroke-width="1"/>
+    <circle r="100" fill="none" stroke="#161E2C" stroke-width="1"/>
+    <circle r="75" fill="none" stroke="#161E2C" stroke-width="1"/>
+    <circle r="50" fill="none" stroke="#161E2C" stroke-width="1"/>
+    <!-- Label area -->
+    <circle r="60" fill="#0F1922"/>
+    <!-- Amber arc highlight -->
+    <path d="M -120 0 A 120 120 0 0 1 120 0" stroke="#D4A843" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <!-- Teal arc -->
+    <path d="M -100 30 A 110 110 0 0 0 100 30" stroke="#00C8AF" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <!-- Center spindle -->
+    <circle r="8" fill="#07090F"/>
+    <circle r="3" fill="#D4A843"/>
+  </g>
+
+  <!-- Left side: text content -->
+  <!-- Amber accent bar -->
+  <rect x="80" y="200" width="6" height="230" fill="#D4A843" rx="3"/>
+
+  <!-- Site name -->
+  <text x="110" y="270" font-family="'Futura', 'Century Gothic', 'Trebuchet MS', Arial, sans-serif"
+        font-size="80" font-weight="700" letter-spacing="4" fill="#F0F4FF">LISTEN</text>
+  <text x="110" y="370" font-family="'Futura', 'Century Gothic', 'Trebuchet MS', Arial, sans-serif"
+        font-size="80" font-weight="700" letter-spacing="4" fill="#D4A843">VINYL</text>
+
+  <!-- Tagline -->
+  <text x="112" y="415" font-family="'Futura', 'Century Gothic', 'Trebuchet MS', Arial, sans-serif"
+        font-size="18" font-weight="400" letter-spacing="6" fill="#6B7FA0">THE VINYL ENTHUSIAST'S PUBLICATION</text>
+
+  <!-- Bottom decoration -->
+  <line x1="80" y1="560" x2="760" y2="560" stroke="#1C2A40" stroke-width="1"/>
+  <text x="80" y="585" font-family="'Courier New', Courier, monospace"
+        font-size="13" letter-spacing="3" fill="#3A4A60">BROADCAST FREQ: 33.33 RPM · EST. MMXXVI · SIGNAL: ANALOGUE</text>
+</svg>

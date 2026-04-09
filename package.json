@@ -1,12 +1,14 @@
 {
   "name": "listenvinyl-eleventy",
   "version": "1.0.0",
+  "type": "module",
   "description": "Listen Vinyl — The Vinyl Enthusiast's Publication",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^3.0.0"
   }
 }

@@ -26,6 +26,53 @@
   <meta name="twitter:description" content="{{ description or site.description }}">
   <meta name="twitter:image" content="{{ og_image or (site.url + '/img/og-default.svg') }}">
 
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} Feed" href="/feed.xml">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Structured Data -->
+  {% if article %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ title }}",
+    "description": "{{ description }}",
+    "datePublished": "{{ date | isoDate }}",
+    "dateModified": "{{ date | isoDate }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.name }}",
+      "url": "{{ site.url }}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}"
+    }
+  }
+  </script>
+  {% else %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.name }}"
+    }
+  }
+  </script>
+  {% endif %}
+
   <style>
     /* Dimmed coming-soon nav items */
     .nav-coming-soon {
@@ -94,7 +141,7 @@
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-        <a href="/articles/" {% if page.url == "/articles/" %}class="active"{% endif %}>Articles</a>
+        <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Listening Guides</span>
         <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Gear</span>
         <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Discovery</span>
         <span class="nav-coming-soon" data-tooltip="Coming soon" role="presentation">Record Stores</span>

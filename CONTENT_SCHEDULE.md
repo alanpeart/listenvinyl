@@ -26,7 +26,7 @@ Full keyword map: keywords.md
 
 ## Notes
 
-- Weeks 1-3 articles already written and committed.
+- Weeks 1-4 articles already written and committed.
 - Refs continue from LV-004: LV-005, LV-006, LV-007...
 - tag_class rotation: Gear = tag--teal, Listening Guides = tag--amber, Discovery = tag--muted, Best Albums = tag--amber
 - Adjust publish dates if a week is missed — keep the sequence.

@@ -5,7 +5,7 @@ description: "Nick Cave occupies singular territory — literary darkness, gothi
 category: "Discovery"
 tag_class: "tag--muted"
 read_time: "10 min read"
-date: 2026-04-12
+date: 2026-04-09
 featured: false
 ref: "LV-007"
 toc_1: "What Makes Nick Cave Nick Cave"

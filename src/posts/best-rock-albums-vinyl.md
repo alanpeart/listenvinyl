@@ -5,7 +5,7 @@ description: "Rock was made for vinyl. These are the records that prove it — f
 category: "Best Albums"
 tag_class: "tag--amber"
 read_time: "13 min read"
-date: 2026-04-19
+date: 2026-04-09
 featured: false
 ref: "LV-008"
 toc_1: "Why Rock Sounds Better on Vinyl"
